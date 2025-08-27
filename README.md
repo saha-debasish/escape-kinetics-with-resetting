@@ -1,2 +1,2 @@
-# escape-kinetics-with-resetting
+# escape-kinetics-with-stochastic-resetting
 This is the code for numerical solution of the paper titled as "Resetting causes memory loss: a transition from non-Markovian to Markovian dynamics". 
