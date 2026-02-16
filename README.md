@@ -5,4 +5,12 @@ $$
 m\omega^{2}x(t) = -\zeta \int_{0}^{t} dt^{\prime} K(t-t^{\prime}) \dot{x}(t^{\prime}) + \theta(t)
 $$
 
-where, $\omega$ is the trap frequency, $\zeta$ is the friction coefficient, and $\theta$ is the correlated random force. The term $K(t-t^{\prime})$ is the memory kernel carrying the memory of past events, and is related to the noise by the fluctuation-dissipation relation as $\big\langle \theta(t) \theta(t^{\prime}) \big\rangle = \zeta k_{\text{B}}T K(t-t^{\prime})$. The memory kernel has the functional form of $K(t-t^{\prime}) = 2H(2H-1)|t-t^{\prime}|^{2H-2}$, a power-law decay in time.
+where, $\omega$ is the trap frequency, $\zeta$ is the friction coefficient, and $\theta$ is the correlated random force. The term $K(t-t^{\prime})$ is the memory kernel carrying the memory of past events, and is related to the noise by the fluctuation-dissipation relation as $\big\langle \theta(t) \theta(t^{\prime}) \big\rangle = \zeta k_{\text{B}}T K(t-t^{\prime})$. 
+
+The memory kernel has the functional form of $K(t-t^{\prime}) = 2H(2H-1)|t-t^{\prime}|^{2H-2}$, a power-law decay in time. Here, $H$ is the Hurst index, which varies between $1/2 \leq H < 1$, with $H = 1/2$ corresponding to the pure Markovian limit, where fluctuations are uncorrelated, and $H > 0.5$ representing the non-Markovian limit. The higher the value of $H$, the stronger the noise correlation becomes.
+
+To simulate the above GLE numerically, we need to discretise it, where the entire process can be expressed as a discrete set of events. The total time $t$ is divided uniformly in $N$ intervals with $\Delta t = t/N$. For $N \to \infty$ and $\Delta t \to zero$, we can write
+
+$$
+x_{N} = x(0) + \frac{1}{A} \bigg[ -\frac{m\omega^{2}(\Delta t)^{\alpha}}{\Gamma(\alpha+1)} \sum_{j=1}^{N} x_{j-1} \Big\{ \big(N-j+1\big)^{\alpha} - \big(N-j\big)^{\alpha} \Big\} + G(N\Delta t) \bigg]
+$$
