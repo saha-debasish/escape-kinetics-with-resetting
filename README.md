@@ -17,4 +17,4 @@ $$
 
 where, $A = 2\zeta H(2H-1) \Gamma(1-\alpha)$, $\alpha = 2-2H$, and $G$ is the fractional Brownian motion. To see the complete derivation, follow the preprint at https://arxiv.org/abs/2509.11608.
 
-The random noise $G$ is sampled using the $\tt{FractionalBrownianMotion}$ module from Stochastic, available at https://stochastic.readthedocs.io/.
+The random noise $G$ is sampled using the $FractionalBrownianMotion$ module from $Stochastic$, available at https://stochastic.readthedocs.io/.
