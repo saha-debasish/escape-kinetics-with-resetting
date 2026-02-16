@@ -12,5 +12,9 @@ The memory kernel has the functional form of $K(t-t^{\prime}) = 2H(2H-1)|t-t^{\p
 To simulate the above GLE numerically, we need to discretise it, where the entire process can be expressed as a discrete set of events. The total time $t$ is divided uniformly in $N$ intervals with $\Delta t = t/N$. For $N \to \infty$ and $\Delta t \to 0$, we can write
 
 $$
-x_{N} = x(0) + \frac{1}{A} \bigg[ -\frac{m\omega^{2}(\Delta t)^{\alpha}}{\Gamma(\alpha+1)} \sum_{j=1}^{N} x_{j-1} \Big{ \big(N-j+1\big)^{\alpha} - \big(N-j\big)^{\alpha} \Big} + G(N\Delta t) \bigg]
+x_{N} = x(0) + \frac{1}{A} [ -\frac{m\omega^{2}(\Delta t)^{\alpha}}{\Gamma(\alpha+1)} \sum_{j=1}^{N} x_{j-1} [(N-j+1)^{\alpha} - (N-j)^{\alpha}] + G(N\Delta t)]
 $$
+
+where, $A = 2\zeta H(2H-1) \Gamma(1-\alpha)$, $\alpha = 2-2H$, and $G$ is the fractional Brownian motion. To see the complete derivation, follow the preprint at https://arxiv.org/abs/2509.11608.
+
+The random noise $G$ is sampled using the $\tt{FractionalBrownianMotion}$ module from Stochastic, available at https://stochastic.readthedocs.io/.
